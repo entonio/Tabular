@@ -65,6 +65,15 @@ extension Table where Source == XLSX {
 }
 
 extension Table where Source == XLSX {
+    public func at(row: Int, col: Int) throws -> Slot {
+        try slot(row: row, col: col)
+    }
+    public func at(col: Int, row: Int) throws -> Slot {
+        try slot(row: row, col: col)
+    }
+}
+
+extension Table where Source == XLSX {
     func row(at index: Int) throws -> [Int: Cell] {
         guard index >= 0, index < source.rowCount else {
             throw DataError("There is no row at index \(index)")
@@ -72,7 +81,7 @@ extension Table where Source == XLSX {
         return source.matrix[index] ?? [:]
     }
 
-    func slot(row: Int, col: Int) throws -> Slot {
+    private func slot(row: Int, col: Int) throws -> Slot {
         guard col >= 0, col < source.colCount else {
             throw DataError("There is no col at index \(row),\(col)")
         }
