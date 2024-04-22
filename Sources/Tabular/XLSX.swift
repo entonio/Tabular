@@ -59,6 +59,7 @@ extension Table where Source == XLSX {
     public func enumerateRows(includeTop: Bool = false) -> Range<Int> {
         (includeTop ? 0 : 1)..<source.rowCount
     }
+
     public func enumerateCols(includeLeft: Bool) -> Range<Int> {
         (includeLeft ? 0 : 1)..<source.colCount
     }
@@ -68,6 +69,7 @@ extension Table where Source == XLSX {
     public func at(row: Int, col: Int) throws -> Slot {
         try slot(row: row, col: col)
     }
+
     public func at(col: Int, row: Int) throws -> Slot {
         try slot(row: row, col: col)
     }
