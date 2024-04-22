@@ -16,7 +16,7 @@ extension Slot {
 }
 
 extension Slot {
-    var trimmed: String {
+    public var trimmed: String {
         string.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }
