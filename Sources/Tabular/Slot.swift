@@ -22,6 +22,15 @@ extension Slot {
 }
 
 extension Slot {
+    public func csv(_ separator: Character = ",", trim: CharacterSet? = .whitespacesAndNewlines) -> [String] {
+        let split = string.split(separator: ",")
+        if let trim {
+            return split.map { $0.trimmingCharacters(in: trim) }
+        } else {
+            return split.map { String($0) }
+        }
+    }
+
     public func text() throws -> String {
         guard !trimmed.isEmpty else {
             throw NotConvertibleError(string, "non-empty text")

@@ -2,7 +2,7 @@
 
 The basic spreadsheet format - rows, columns, headers - is well understood by regular computer users. There are many spreadsheet programs, all of which offer advanced editing of the data, and there are even other programs that can export their own data as a table. These circumstances make it an ideal format for some kinds of data interchange, but there aren't always tools ready to convert the data back into structured objects. The purpose of this package is to help in the access to, and conversion of, the required values.
 
-This package is not meant to handle very large tables or to process them at maximum speed or minimum memory cost, nor does it do conversion itself. Rather, it's focused on easening the sharing of data between regular users and developers, by having the former produce the data in a familiar format, and the latter easily extract the relevant parts from it, with some degree of tolerance.
+This package is not meant to handle very large tables or to process them at maximum speed or minimum memory cost, nor does it do conversion itself. Rather, it's focused on easing the sharing of data between regular users and developers, by having the former produce the data in a familiar format, and the latter easily extract the relevant parts from it, with some degree of tolerance.
 
 Reading XLSX files is supported via [CoreXLSX](https://github.com/CoreOffice/CoreXLSX).
 CSV support may be added at some point.
